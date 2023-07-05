@@ -2,11 +2,17 @@
 import BaseSearchbar from './BaseSearchbar.vue';
 
 export default {
-    components: { BaseSearchbar }
+    components: { BaseSearchbar },
+    emits: ['searchFilms'],
+    methods: {
+        onButtonClicked(film) {
+            this.$emit('searchFilms', film)
+        }
+    }
 }
 
 </script>
 
 <template>
-    <BaseSearchbar />
+    <BaseSearchbar @buttonClicked="onButtonClicked" />
 </template>
