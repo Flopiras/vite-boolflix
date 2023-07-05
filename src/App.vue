@@ -6,13 +6,20 @@ import { store } from '../src/data/store';
 
 export default {
   name: 'Boolflix',
+  data() {
+    return {
+      store
+    }
+  },
   components: { AppHeader, AppMain },
   methods: {
-    fetchFilterFilm(film) {
-      const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=37fedf37163e8a1bd04c6b59fc4a607b&query=${film}`;
+    fetchFilterFilm(searchedFilm) {
+      const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=37fedf37163e8a1bd04c6b59fc4a607b&query=${searchedFilm}`;
 
       axios.get(endpoint).then(res => {
         store.films = res.data.results;
+
+        console.log(film)
       })
     }
   }

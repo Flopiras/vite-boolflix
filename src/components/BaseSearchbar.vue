@@ -5,11 +5,17 @@ export default {
             term: '',
         }
     },
-    emits: ['buttonClicked']
+    emits: ['buttonClicked'],
+    methods: {
+        clickOnButton() {
+            const searchedTerm = this.term;
+            this.$emit('button-clicked', searchedTerm);
+        }
+    }
 }
 </script>
 
 <template>
-    <input type="text" placeholder="cerca" v-model="term">
-    <button @click="$emit('buttonClicked', term)">Cerca</button>
+    <input type="text" placeholder="cerca" v-model.trim="term">
+    <button @click="clickOnButton" type="submit">Cerca</button>
 </template>

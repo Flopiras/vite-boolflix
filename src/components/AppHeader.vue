@@ -9,10 +9,10 @@ export default {
 
         }
     },
-    emits: ['searchFilms'],
+    emits: ['search-films'],
     methods: {
-        onButtonClicked(film) {
-            this.$emit('searchFilms', film)
+        filmSearch(searchedFilm) {
+            this.$emit('search-films', searchedFilm)
         }
     }
 }
@@ -20,5 +20,5 @@ export default {
 </script>
 
 <template>
-    <BaseSearchbar @buttonClicked="onButtonClicked" />
+    <BaseSearchbar @buttonClicked="filmSearch" />
 </template>
