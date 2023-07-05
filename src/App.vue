@@ -1,5 +1,13 @@
-<script></script>
+<script>
+import AppHeader from '.components/AppHeader';
 
-<template></template>
+export default {
+  components: { AppHeader }
+}
+</script>
+
+<template>
+  <AppHeader />
+</template>
 
 <style></style>
