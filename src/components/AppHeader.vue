@@ -1,8 +1,14 @@
 <script>
 import BaseSearchbar from './BaseSearchbar.vue';
 
+
 export default {
     components: { BaseSearchbar },
+    data() {
+        return {
+
+        }
+    },
     emits: ['searchFilms'],
     methods: {
         onButtonClicked(film) {
