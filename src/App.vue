@@ -19,7 +19,7 @@ export default {
       axios.get(endpoint).then(res => {
         store.films = res.data.results;
 
-        console.log(film)
+        console.log(searchedFilm)
       })
     }
   }
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @onButtonClicked="fetchFilterFilm" />
+  <AppHeader @search-films="fetchFilterFilm" />
 
   <AppMain />
 </template>

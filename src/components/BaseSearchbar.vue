@@ -9,7 +9,7 @@ export default {
     methods: {
         clickOnButton() {
             const searchedTerm = this.term;
-            this.$emit('button-clicked', searchedTerm);
+            this.$emit('buttonClicked', searchedTerm);
         }
     }
 }
