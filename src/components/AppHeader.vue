@@ -6,7 +6,6 @@ export default {
     components: { BaseSearchbar },
     data() {
         return {
-
         }
     },
     emits: ['search-films'],

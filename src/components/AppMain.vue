@@ -1,11 +1,12 @@
 <script>
-import { store } from '../data/store';
-
 export default {
     data() {
         return {
-            store,
+
         }
+    },
+    props: {
+        films: Array
     }
 }
 
@@ -13,6 +14,13 @@ export default {
 
 <template>
     <ul>
-        <li></li>
+        <li v-for="film in films">
+            <ul>
+                <li>Titolo: {{ film.title }}</li>
+                <li>Titolo in lingua originale: {{ film.original_title }}</li>
+                <li>Lingua: {{ film.original_language }}</li>
+                <ul>Voto: {{ film.vote_average }}</ul>
+            </ul>
+        </li>
     </ul>
 </template>
