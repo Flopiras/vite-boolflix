@@ -8,7 +8,8 @@ export default {
 
     },
     props: {
-        films: Array
+        movies: Array,
+        series: Array
     }
 }
 
@@ -16,5 +17,8 @@ export default {
 
 <template>
     <h2>Film :</h2>
-    <FilmCard v-for="film in films" :key="film.id" :film="film" />
+    <FilmCard v-for="movie in movies" :key="movie.id" :film="movie" />
+
+    <h2>Serie TV :</h2>
+    <FilmCard v-for="serie in series" :key="serie.id" :film="serie" />
 </template>
