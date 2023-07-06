@@ -40,13 +40,11 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <AppHeader @search-films="fetchFilterFilm" />
+  <AppHeader @search-films="fetchFilterFilm" />
 
-    <AppMain :movies="store.movies" :series="store.series" />
-  </div>
+  <AppMain :movies="store.movies" :series="store.series" />
 </template>
 
 <style lang="scss">
-@use './assets/scss/index.scss'
+@use './assets/scss/index.scss';
 </style>

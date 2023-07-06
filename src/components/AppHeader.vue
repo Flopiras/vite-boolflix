@@ -19,5 +19,18 @@ export default {
 </script>
 
 <template>
-    <BaseSearchbar @buttonClicked="filmSearch" />
+    <header>
+        <div class="container">
+            <BaseSearchbar @buttonClicked="filmSearch" />
+        </div>
+    </header>
 </template>
+
+<style lang="scss" scoped>
+@use '../assets/scss/vars' as *;
+
+header {
+    height: 5rem;
+    background-color: $bg-header;
+}
+</style>
