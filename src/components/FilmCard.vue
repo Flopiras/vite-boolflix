@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-
+            isFocused: false
         }
     },
     props: {
@@ -35,33 +35,94 @@ export default {
 </script>
 
 <template>
-    <ul>
-        <li><img :src="imagePosterSrc" alt=""></li>
-        <li>Titolo: {{ film.title || film.name }}</li>
-        <li>Titolo in lingua originale: {{ film.original_title || film.original_name }}</li>
-        <li>
-            <img v-if="hasFlag" :src="imageFlagSrc" :alt="film.original_language">
-            <span v-else>Lingua: {{ film.original_language }}</span>
-        </li>
-        <li>
-            Voto:
-            <span v-if="starVote === 0"> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i></span>
-            <span v-if="starVote === 1"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i></span>
-            <span v-if="starVote === 2"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i></span>
-            <span v-if="starVote === 3"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                    class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i></span>
-            <span v-if="starVote === 4"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                    class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i></span>
-            <span v-if="starVote === 5"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                    class="fa-regular fa-star"></i></span>
-        </li>
-    </ul>
+    <div @mouseenter="isFocused = true" @mouseleave="isFocused = false" class="card mb-2">
+        <figure>
+            <img id="poster" :src="imagePosterSrc" alt="">
+
+        </figure>
+        <div v-if="isFocused" id="info">
+
+            <ul>
+                <li>
+                    <p>Titolo: <span class="h5">{{ film.title || film.name }}</span> </p>
+                </li>
+                <li>
+                    <p>Titolo in lingua originale: <span class="h5">{{ film.original_title || film.original_name }}</span>
+                    </p>
+                </li>
+                <li>
+                    <img id="flag" v-if="hasFlag" :src="imageFlagSrc" :alt="film.original_language">
+                    <span v-else>Lingua: {{ film.original_language }}</span>
+                </li>
+                <li>
+                    <p class="my-2">
+                        Voto:
+                        <span v-if="starVote === 0"> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                        <span v-if="starVote === 1"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                        <span v-if="starVote === 2"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                        <span v-if="starVote === 3"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                        <span v-if="starVote === 4"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                        <span v-if="starVote === 5"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                                class="fa-regular fa-star"></i></span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </template>
+
+<style lang="scss" scoped>
+@use '../assets/scss/vars' as *;
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#poster {
+    display: block;
+    height: 300px;
+    margin: 5px auto;
+}
+
+#flag {
+    display: block;
+    width: 100px;
+}
+
+#info {
+    font-size: 1.2rem;
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+ul {
+    padding: 0;
+
+    i {
+        color: $star;
+    }
+}
+</style>
