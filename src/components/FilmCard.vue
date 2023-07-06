@@ -25,8 +25,8 @@ export default {
 
 <template>
     <ul>
-        <li>Titolo: {{ film.title }}</li>
-        <li>Titolo in lingua originale: {{ film.original_title }}</li>
+        <li>Titolo: {{ film.title || film.name }}</li>
+        <li>Titolo in lingua originale: {{ film.original_title || film.original_name }}</li>
         <li>
             <img v-if="hasFlag" :src="imageFlagSrc" :alt="film.original_language">
             <span v-else>Lingua: {{ film.original_language }}</span>
