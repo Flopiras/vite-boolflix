@@ -1,9 +1,11 @@
 <script>
+import FilmCard from './FilmCard.vue';
 export default {
+    components: { FilmCard },
     data() {
         return {
-
         }
+
     },
     props: {
         films: Array
@@ -13,14 +15,5 @@ export default {
 </script>
 
 <template>
-    <ul>
-        <li v-for="film in films">
-            <ul>
-                <li>Titolo: {{ film.title }}</li>
-                <li>Titolo in lingua originale: {{ film.original_title }}</li>
-                <li>Lingua: {{ film.original_language }}</li>
-                <ul>Voto: {{ film.vote_average }}</ul>
-            </ul>
-        </li>
-    </ul>
+    <FilmCard v-for="film in films" :key="film.id" :film="film" />
 </template>
