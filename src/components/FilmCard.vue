@@ -16,7 +16,6 @@ export default {
 
         imageFlagSrc() {
             const url = new URL(`../assets/img/${this.film.original_language}.png`, import.meta.url);
-            console.log(url)
             return url.href
         }
     }
