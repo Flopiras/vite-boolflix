@@ -17,6 +17,11 @@ export default {
         imageFlagSrc() {
             const url = new URL(`../assets/img/${this.film.original_language}.png`, import.meta.url);
             return url.href
+        },
+
+        imagePosterSrc() {
+            const url = new URL(`https://image.tmdb.org/t/p/w342/${this.film.poster_path}`);
+            return url.href
         }
     }
 }
@@ -25,6 +30,7 @@ export default {
 
 <template>
     <ul>
+        <li><img :src="imagePosterSrc" alt=""></li>
         <li>Titolo: {{ film.title || film.name }}</li>
         <li>Titolo in lingua originale: {{ film.original_title || film.original_name }}</li>
         <li>
