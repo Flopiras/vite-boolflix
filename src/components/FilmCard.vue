@@ -22,6 +22,12 @@ export default {
         imagePosterSrc() {
             const url = new URL(`https://image.tmdb.org/t/p/w342/${this.film.poster_path}`);
             return url.href
+        },
+
+        starVote() {
+            const vote = Math.ceil(this.film.vote_average / 2);
+
+            return vote
         }
     }
 }
@@ -37,6 +43,6 @@ export default {
             <img v-if="hasFlag" :src="imageFlagSrc" :alt="film.original_language">
             <span v-else>Lingua: {{ film.original_language }}</span>
         </li>
-        <li>Voto: {{ film.vote_average }}</li>
+        <li>Voto: {{ starVote }}</li>
     </ul>
 </template>
