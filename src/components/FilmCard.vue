@@ -43,6 +43,25 @@ export default {
             <img v-if="hasFlag" :src="imageFlagSrc" :alt="film.original_language">
             <span v-else>Lingua: {{ film.original_language }}</span>
         </li>
-        <li>Voto: {{ starVote }}</li>
+        <li>
+            Voto:
+            <span v-if="starVote === 0"> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i></span>
+            <span v-if="starVote === 1"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i></span>
+            <span v-if="starVote === 2"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i></span>
+            <span v-if="starVote === 3"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                    class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i></span>
+            <span v-if="starVote === 4"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                    class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i></span>
+            <span v-if="starVote === 5"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
+                    class="fa-regular fa-star"></i></span>
+        </li>
     </ul>
 </template>
