@@ -14,12 +14,25 @@ export default {
   components: { AppHeader, AppMain },
   methods: {
     fetchFilterFilm(searchedFilm) {
+      console.log(searchedFilm)
+
+      this.filterMovies(searchedFilm);
+      this.filterSeries(searchedFilm)
+    },
+
+    filterMovies(searchedFilm) {
       const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=37fedf37163e8a1bd04c6b59fc4a607b&query=${searchedFilm}`;
 
       axios.get(endpoint).then(res => {
         store.films = res.data.results;
+      })
+    },
 
-        console.log(searchedFilm)
+    filterSeries(searchedFilm) {
+      const endpoint = `https://api.themoviedb.org/3/search/tv?api_key=37fedf37163e8a1bd04c6b59fc4a607b&query=${searchedFilm}`;
+
+      axios.get(endpoint).then(res => {
+        store.series = res.data.results;
       })
     }
   }
