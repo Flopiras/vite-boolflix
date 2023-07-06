@@ -42,7 +42,7 @@ export default {
 <template>
   <AppHeader @search-films="fetchFilterFilm" />
 
-  <AppMain :films="store.films" />
+  <AppMain :movies="store.movies" :series="store.series" />
 </template>
 
 <style></style>
