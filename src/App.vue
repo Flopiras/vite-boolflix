@@ -24,7 +24,7 @@ export default {
       const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=37fedf37163e8a1bd04c6b59fc4a607b&query=${searchedFilm}`;
 
       axios.get(endpoint).then(res => {
-        store.films = res.data.results;
+        store.movies = res.data.results;
       })
     },
 
