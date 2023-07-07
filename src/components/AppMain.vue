@@ -47,6 +47,10 @@ export default {
 #movies,
 #series {
     min-height: calc(50%);
+
+    h2 {
+        color: black;
+    }
 }
 
 #movies {
