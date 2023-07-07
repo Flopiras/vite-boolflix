@@ -47,4 +47,8 @@ export default {
 
 <style lang="scss">
 @use './assets/scss/index.scss';
+
+main {
+  height: calc(100vh - 5rem);
+}
 </style>

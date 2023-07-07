@@ -44,6 +44,12 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/vars' as *;
 
+#movies,
+#series {
+    min-height: calc(50%);
+    overflow-y: auto;
+}
+
 #movies {
     background-color: $bg-movies;
 }
