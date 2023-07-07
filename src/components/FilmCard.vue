@@ -39,6 +39,11 @@ export default {
         <figure>
             <img id="poster" :src="imagePosterSrc" alt="">
 
+            <figcaption>
+                <p>Titolo : <span class="h5">{{ film.original_title || film.original_name
+                }}</span>
+                </p>
+            </figcaption>
         </figure>
         <div v-if="isFocused" id="info">
 
@@ -88,14 +93,19 @@ export default {
 
 .card {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 440px;
+}
+
+figcaption {
+    p {
+        margin: 1rem 2rem 1rem 2rem;
+    }
 }
 
 #poster {
     display: block;
     height: 300px;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 #flag {
