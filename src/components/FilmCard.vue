@@ -72,7 +72,7 @@ export default {
 
 .card {
     display: flex;
-    height: 420px;
+    height: 430px;
 }
 
 figcaption {
