@@ -5,7 +5,7 @@ import axios from 'axios';
 import { store } from '../src/data/store';
 
 export default {
-  name: 'Boolflix',
+  name: 'BoolflixApp',
   data() {
     return {
       store
