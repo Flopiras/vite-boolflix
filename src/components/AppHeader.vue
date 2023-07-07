@@ -31,7 +31,7 @@ export default {
 @use '../assets/scss/vars' as *;
 
 header {
-    height: 5rem;
+    min-height: 5rem;
     background-color: $bg-header;
 }
 </style>
