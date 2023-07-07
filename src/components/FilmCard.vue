@@ -24,10 +24,9 @@ export default {
             return url.href
         },
 
-        starVote() {
-            const vote = Math.ceil(this.film.vote_average / 2);
+        vote() {
 
-            return vote
+            return Math.ceil(this.film.vote_average / 2);
         }
     }
 }
@@ -60,27 +59,7 @@ export default {
                     <span v-else>Lingua: {{ film.original_language }}</span>
                 </li>
                 <li>
-                    <p class="my-2">
-                        Voto:
-                        <span v-if="starVote === 0"> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                        <span v-if="starVote === 1"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                        <span v-if="starVote === 2"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                        <span v-if="starVote === 3"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                                class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                        <span v-if="starVote === 4"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                        <span v-if="starVote === 5"> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i
-                                class="fa-regular fa-star"></i></span>
-                    </p>
+                    <i v-for="n in 5" :key="n" :class="n <= vote ? 'fas' : 'far'" class="fa-star"></i>
                 </li>
             </ul>
         </div>
@@ -93,7 +72,7 @@ export default {
 
 .card {
     display: flex;
-    height: 440px;
+    height: 420px;
 }
 
 figcaption {

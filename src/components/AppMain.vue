@@ -47,7 +47,6 @@ export default {
 #movies,
 #series {
     min-height: calc(50%);
-    overflow-y: auto;
 }
 
 #movies {
