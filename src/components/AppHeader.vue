@@ -20,7 +20,8 @@ export default {
 
 <template>
     <header>
-        <div class="container">
+        <div class="container d-flex justify-content-between">
+            <img id="logo" src="../../public/logo.png" alt="">
             <BaseSearchbar @buttonClicked="filmSearch" />
         </div>
     </header>
