@@ -20,7 +20,7 @@ export default {
 
 <template>
     <header>
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between align-items-center">
             <img id="logo" src="../../public/logo.png" alt="">
             <BaseSearchbar @buttonClicked="filmSearch" />
         </div>
